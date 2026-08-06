@@ -83,6 +83,8 @@
   .writer-desc { flex: 1 1 0; min-width: 0; line-height: 1.45; font-size: 15px; }
   .writer-desc p { margin: 0 0 12px; }
   .writer-desc p:last-child { margin-bottom: 0; }
+  .creative-nav { line-height: 1.6; max-width: 500px; margin-bottom: 24px; }
+  .creative-nav a[aria-current="true"] { color: inherit; text-decoration: none; }
   @media (max-width: 760px) {
     .writer-item { flex-direction: column; align-items: stretch; gap: 16px; max-width: 500px; }
     .writer-desc { width: 100%; max-width: 500px; }
@@ -309,8 +311,17 @@
 
 <div id="creative" style="display:none">
 
+<div class="creative-nav">
+  Creative<br />
+  <br />
+  <a href="#" onclick="filterCreative('all');return false;" aria-current="true">All</a><br />
+  <a href="#" onclick="filterCreative('campaigns');return false;">Campaigns</a><br />
+  <a href="#" onclick="filterCreative('films');return false;">Films</a><br />
+  <a href="#" onclick="filterCreative('music-videos');return false;">Music Videos</a>
+</div>
+
 <!-- клавакока -->
-<div class="writer-item">
+<div class="writer-item" data-work-type="campaigns">
   <iframe
     data-src="https://player.vimeo.com/video/1215406133?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -327,7 +338,7 @@
 </div>
 
 <!-- механик -->
-<div class="writer-item">
+<div class="writer-item" data-work-type="campaigns">
   <iframe
     data-src="https://player.vimeo.com/video/1215406102?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -344,7 +355,7 @@
 </div>
 
 <!-- пей друга -->
-<div class="writer-item">
+<div class="writer-item" data-work-type="campaigns">
   <iframe
     data-src="https://player.vimeo.com/video/1215406075?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -362,7 +373,7 @@
 
 
 <!-- мотив шел и дошел -->
-<div class="writer-item">
+<div class="writer-item" data-work-type="campaigns">
   <iframe
     data-src="https://player.vimeo.com/video/1183989702?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -379,7 +390,7 @@
 </div>
 
 <!-- точка он не один -->
-<div class="writer-item">
+<div class="writer-item" data-work-type="campaigns">
   <iframe
     data-src="https://player.vimeo.com/video/1183989712?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -396,7 +407,7 @@
 </div>
 
 <!-- мир танков -->
-<div class="writer-item">
+<div class="writer-item" data-work-type="campaigns">
   <iframe
     data-src="https://player.vimeo.com/video/1183989573?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -413,7 +424,7 @@
 </div>
 
 <!-- мотив кенгуру -->
-<div class="writer-item">
+<div class="writer-item" data-work-type="campaigns">
   <iframe
     data-src="https://player.vimeo.com/video/1182898068?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -430,7 +441,7 @@
 </div>
 
 <!-- хочу платить -->
-<div class="writer-item">
+<div class="writer-item" data-work-type="campaigns">
   <iframe
     data-src="https://player.vimeo.com/video/1183989688?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -447,7 +458,7 @@
 </div>
 
 <!-- тейсти кофе -->
-<div class="writer-item">
+<div class="writer-item" data-work-type="campaigns">
   <iframe
     data-src="https://player.vimeo.com/video/1183989683?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -464,7 +475,7 @@
 </div>
 
 <!-- заживем брусника -->
-<div class="writer-item">
+<div class="writer-item" data-work-type="campaigns">
   <iframe
     data-src="https://player.vimeo.com/video/1182898177?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -481,7 +492,7 @@
 </div>
 
 <!-- потому что брусника рядом -->
-<div class="writer-item">
+<div class="writer-item" data-work-type="campaigns">
   <iframe
     data-src="https://player.vimeo.com/video/1182968069?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -496,7 +507,7 @@
 </div>
 
 <!-- ган -->
-<div class="writer-item">
+<div class="writer-item" data-work-type="music-videos">
   <iframe
     data-src="https://player.vimeo.com/video/1182899100?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -513,7 +524,7 @@
 </div>
 
 <!-- патио -->
-<div class="writer-item">
+<div class="writer-item" data-work-type="campaigns">
   <iframe
     data-src="https://player.vimeo.com/video/984738135?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -530,7 +541,7 @@
 </div>
 
 <!-- меняйся и меняй -->
-<div class="writer-item">
+<div class="writer-item" data-work-type="campaigns">
   <iframe
     data-src="https://player.vimeo.com/video/1182899021?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -547,7 +558,7 @@
 </div>
 
 <!-- сулпак весна -->
-<div class="writer-item">
+<div class="writer-item" data-work-type="campaigns">
   <iframe
     data-src="https://player.vimeo.com/video/1183989616?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -564,7 +575,7 @@
 </div>
 
 <!-- сулпак -->
-<div class="writer-item">
+<div class="writer-item" data-work-type="campaigns">
   <iframe
     data-src="https://player.vimeo.com/video/984739548?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -581,7 +592,7 @@
 </div>
 
 <!-- это был тяжелый год -->
-<div class="writer-item">
+<div class="writer-item" data-work-type="campaigns">
   <iframe
     data-src="https://player.vimeo.com/video/1182897900?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -598,7 +609,7 @@
 </div>
 
 <!-- мотив новый год -->
-<div class="writer-item">
+<div class="writer-item" data-work-type="campaigns">
   <iframe
     data-src="https://player.vimeo.com/video/1184038605?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -615,7 +626,7 @@
 </div>
 
 <!-- кпп -->
-<div class="writer-item">
+<div class="writer-item" data-work-type="campaigns">
   <iframe
     data-src="https://player.vimeo.com/video/1182972966?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -632,7 +643,7 @@
 </div>
 
 <!-- спасиииииибо -->
-<div class="writer-item">
+<div class="writer-item" data-work-type="campaigns">
   <iframe
     data-src="https://player.vimeo.com/video/1182897314?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -649,7 +660,7 @@
 </div>
 
 <!-- ну и год -->
-<div class="writer-item">
+<div class="writer-item" data-work-type="campaigns">
   <iframe
     data-src="https://player.vimeo.com/video/1182919184?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -666,7 +677,7 @@
 </div>
 
 <!-- помужски -->
-<div class="writer-item">
+<div class="writer-item" data-work-type="films">
   <iframe
     data-src="https://player.vimeo.com/video/1184038571?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -683,7 +694,7 @@
 </div>
 
 <!-- антимаркировка -->
-<div class="writer-item">
+<div class="writer-item" data-work-type="campaigns">
   <iframe
     data-src="https://player.vimeo.com/video/984739069?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -700,7 +711,7 @@
 </div>
 
 <!-- мегафон -->
-<div class="writer-item">
+<div class="writer-item" data-work-type="campaigns">
   <iframe
     data-src="https://player.vimeo.com/video/984738673?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -717,7 +728,7 @@
 </div>
 
 <!-- казань экспрес -->
-<div class="writer-item">
+<div class="writer-item" data-work-type="campaigns">
   <iframe
     data-src="https://player.vimeo.com/video/1184038570?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -734,7 +745,7 @@
 </div>
 
 <!-- доставляем доставляем -->
-<div class="writer-item">
+<div class="writer-item" data-work-type="campaigns">
   <iframe
     data-src="https://player.vimeo.com/video/1183989671?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -751,7 +762,7 @@
 </div>
 
 <!-- альфаголубь -->
-<div class="writer-item">
+<div class="writer-item" data-work-type="campaigns">
   <iframe
     data-src="https://player.vimeo.com/video/984739209?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -768,7 +779,7 @@
 </div>
 
 <!-- брусникашеринг -->
-<div class="writer-item">
+<div class="writer-item" data-work-type="campaigns">
   <iframe
     data-src="https://player.vimeo.com/video/984739599?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -785,7 +796,7 @@
 </div>
 
 <!-- семьбратьев -->
-<div class="writer-item">
+<div class="writer-item" data-work-type="campaigns">
   <iframe
     data-src="https://player.vimeo.com/video/984739478?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -802,7 +813,7 @@
 </div>
 
 <!-- видишь краба любишь краба -->
-<div class="writer-item">
+<div class="writer-item" data-work-type="campaigns">
   <iframe
     data-src="https://player.vimeo.com/video/1183989572?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -819,7 +830,7 @@
 </div>
 
 <!-- точка2020 -->
-<div class="writer-item">
+<div class="writer-item" data-work-type="campaigns">
   <iframe
     data-src="https://player.vimeo.com/video/984738909?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -836,7 +847,7 @@
 </div>
 
 <!-- тренажористый фитнес -->
-<div class="writer-item">
+<div class="writer-item" data-work-type="campaigns">
   <iframe
     data-src="https://player.vimeo.com/video/1183989667?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -853,7 +864,7 @@
 </div>
 
 <!-- кэшбек кешбеков -->
-<div class="writer-item">
+<div class="writer-item" data-work-type="campaigns">
   <iframe
     data-src="https://player.vimeo.com/video/1182900289?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -870,7 +881,7 @@
 </div>
 
 <!-- олмазор -->
-<div class="writer-item">
+<div class="writer-item" data-work-type="campaigns">
   <iframe
     data-src="https://player.vimeo.com/video/1184041115?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -887,7 +898,7 @@
 </div>
 
 <!-- форте фам -->
-<div class="writer-item">
+<div class="writer-item" data-work-type="campaigns">
   <iframe
     data-src="https://player.vimeo.com/video/984739361?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -904,7 +915,7 @@
 </div>
 
 <!-- черкашин -->
-<div class="writer-item">
+<div class="writer-item" data-work-type="campaigns">
   <iframe
     data-src="https://player.vimeo.com/video/984738836?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -921,7 +932,7 @@
 </div>
 
 <!-- черкизово -->
-<div class="writer-item">
+<div class="writer-item" data-work-type="campaigns">
   <iframe
     data-src="https://player.vimeo.com/video/1184038600?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -1193,6 +1204,16 @@ function show(id) {
     iframe.removeAttribute('data-src');
   });
   if (id === 'creative') requestAnimationFrame(fitWriterDesc);
+}
+
+function filterCreative(type) {
+  document.querySelectorAll('#creative .writer-item').forEach(function(item) {
+    item.style.display = type === 'all' || item.getAttribute('data-work-type') === type ? '' : 'none';
+  });
+  document.querySelectorAll('#creative .creative-nav a').forEach(function(link) {
+    link.setAttribute('aria-current', link.getAttribute('onclick').indexOf("'" + type + "'") !== -1 ? 'true' : 'false');
+  });
+  requestAnimationFrame(fitWriterDesc);
 }
 
 // Rule: a writer description is never taller than its video.
