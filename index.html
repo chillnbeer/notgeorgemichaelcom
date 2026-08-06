@@ -539,7 +539,7 @@
 </div>
 
 <!-- все слова -->
-<div class="writer-item" data-work-type="music-videos">
+<div class="writer-item" data-work-type="music-videos" data-hidden="true" style="display:none">
   <iframe
     data-src="https://player.vimeo.com/video/1186844225?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -1260,7 +1260,8 @@ function show(id) {
 
 function filterCreative(type) {
   document.querySelectorAll('#creative .writer-item').forEach(function(item) {
-    item.style.display = type === 'all' || item.getAttribute('data-work-type') === type ? '' : 'none';
+    var isHidden = item.getAttribute('data-hidden') === 'true';
+    item.style.display = !isHidden && (type === 'all' || item.getAttribute('data-work-type') === type) ? '' : 'none';
   });
   document.querySelectorAll('#creative .creative-nav a').forEach(function(link) {
     link.setAttribute('aria-current', link.getAttribute('onclick').indexOf("'" + type + "'") !== -1 ? 'true' : 'false');
