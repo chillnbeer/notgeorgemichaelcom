@@ -86,6 +86,9 @@
   @media (max-width: 760px) {
     .writer-item { flex-direction: column; align-items: stretch; gap: 16px; max-width: 500px; }
     .writer-desc { width: 100%; max-width: 500px; }
+    .writer-desc-toggle { width: 100%; max-width: 500px; line-height: 1.45; font-size: 15px; }
+    .writer-desc-toggle summary { cursor: pointer; }
+    .writer-desc-toggle .writer-desc { margin-top: 12px; }
   }
   @media (max-width: 520px) {
     table { width: 100%; }
@@ -1211,10 +1214,36 @@ function fitWriterDesc() {
   });
 }
 
+function setupWriterDescToggles() {
+  var compact = window.matchMedia('(max-width: 760px)').matches;
+  document.querySelectorAll('#creative .writer-desc-toggle').forEach(function(details) {
+    if (compact) return;
+    var desc = details.querySelector('.writer-desc');
+    if (!desc) return;
+    details.parentNode.insertBefore(desc, details);
+    details.parentNode.removeChild(details);
+  });
+  if (!compact) return;
+  document.querySelectorAll('#creative .writer-item').forEach(function(item) {
+    var desc = item.querySelector(':scope > .writer-desc');
+    if (!desc) return;
+    var details = document.createElement('details');
+    var summary = document.createElement('summary');
+    details.className = 'writer-desc-toggle';
+    summary.textContent = 'text';
+    details.appendChild(summary);
+    desc.parentNode.insertBefore(details, desc);
+    details.appendChild(desc);
+  });
+}
+
 var _writerResizeTimer;
 window.addEventListener('resize', function() {
   clearTimeout(_writerResizeTimer);
-  _writerResizeTimer = setTimeout(fitWriterDesc, 150);
+  _writerResizeTimer = setTimeout(function() {
+    setupWriterDescToggles();
+    fitWriterDesc();
+  }, 150);
 });
 
 if (window.matchMedia('(max-width: 520px)').matches) {
@@ -1247,6 +1276,8 @@ if (window.matchMedia('(max-width: 520px)').matches) {
     table.parentNode.replaceChild(div, table);
   });
 }
+
+setupWriterDescToggles();
 </script>
 
 </html>
