@@ -62,7 +62,7 @@
 <div style="line-height:1.6; max-width:500px; margin:32px 0 12px;">
   Still feel so <button type="button" id="unsure-trigger" class="quiet-button">unsure</button>.<br />
   <span id="unsure-lines"></span>
-  <a href="https://instagram.com/buzhba100" target="_blank" rel="noopener noreferrer" class="quiet-link">@buzhba100</a><br />
+  <a href="https://instagram.com/buzhba100" target="_blank" rel="noopener noreferrer" class="quiet-link" id="instagram-link">@buzhba100</a><br />
   <a href="mailto:george@notgeorgemichael.com" class="quiet-link">george@notgeorgemichael.com</a><br />
   <a href="tel:+79222952529" class="quiet-link">+7 (922) 2952529</a>
 </div>
@@ -83,6 +83,7 @@ var unsureLines = [
 var unsureIndex = 0;
 var unsureTrigger = document.getElementById('unsure-trigger');
 var unsureLinesEl = document.getElementById('unsure-lines');
+var instagramLink = document.getElementById('instagram-link');
 
 function addUnsureLine() {
   if (!unsureTrigger || !unsureLinesEl || unsureIndex >= unsureLines.length) return;
@@ -97,6 +98,7 @@ function addUnsureLine() {
     var plain = document.createTextNode('unsure');
     unsureTrigger.parentNode.replaceChild(plain, unsureTrigger);
     unsureTrigger = null;
+    if (instagramLink) instagramLink.classList.remove('quiet-link');
   }
 }
 
