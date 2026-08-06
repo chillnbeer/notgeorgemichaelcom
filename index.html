@@ -83,11 +83,13 @@
   .writer-desc { flex: 1 1 0; min-width: 0; line-height: 1.45; font-size: 15px; }
   .writer-desc p { margin: 0 0 12px; }
   .writer-desc p:last-child { margin-bottom: 0; }
+  @media (max-width: 760px) {
+    .writer-item { flex-direction: column; align-items: stretch; gap: 16px; max-width: 500px; }
+    .writer-desc { width: 100%; max-width: 500px; }
+  }
   @media (max-width: 520px) {
     table { width: 100%; }
     table, table tr, table td { display: block !important; width: 100% !important; }
-    .writer-item { flex-direction: column; align-items: stretch; }
-    .writer-desc { width: 100%; }
     td img { width: 100%; height: auto; }
     .video-wrap { position: relative; width: 100%; height: 0; overflow: hidden; }
     .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100% !important; height: 100% !important; }
@@ -1193,7 +1195,7 @@ function show(id) {
 // Rule: a writer description is never taller than its video.
 // Shrink each description's font-size until it fits the video height.
 function fitWriterDesc() {
-  if (window.matchMedia('(max-width: 520px)').matches) return;
+  if (window.matchMedia('(max-width: 760px)').matches) return;
   document.querySelectorAll('#creative .writer-item').forEach(function(item) {
     var media = item.querySelector('iframe') || item.querySelector('.video-wrap');
     var desc = item.querySelector('.writer-desc');
