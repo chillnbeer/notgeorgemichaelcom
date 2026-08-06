@@ -26,8 +26,13 @@
   .quiet-button:hover, .quiet-button:focus-visible { opacity: 0.72; }
   .unsure-thought { display: block; margin: 0 0 12px; }
   .site-date { position: fixed; right: 16px; bottom: 12px; line-height: 1.6; max-width: 500px; }
+  .wide-text div[style*="max-width:500px"] { max-width: min(50vw, 900px) !important; }
+  @media (max-width: 760px) {
+    .wide-text div[style*="max-width:500px"] { max-width: 100% !important; }
+  }
 </style>
 </head>
+<body class="wide-text">
 
 <div style="line-height:1.6; max-width:500px; margin-bottom:24px;">
   George Michael not found.<br />
@@ -105,4 +110,5 @@ function addUnsureLine() {
 if (unsureTrigger) unsureTrigger.addEventListener('click', addUnsureLine);
 </script>
 
+</body>
 </html>
