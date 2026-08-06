@@ -24,6 +24,7 @@
   .quiet-link:hover, .quiet-link:focus-visible { opacity: 0.72; }
   .quiet-button { appearance: none; background: none; border: 0; padding: 0; margin: 0; color: inherit; font: inherit; line-height: inherit; cursor: pointer; }
   .quiet-button:hover, .quiet-button:focus-visible { opacity: 0.72; }
+  .unsure-thought { display: block; margin: 0 0 12px; }
   .site-date { position: fixed; right: 16px; bottom: 12px; line-height: 1.6; max-width: 500px; }
 </style>
 </head>
@@ -68,12 +69,20 @@
 
 <script>
 var unsureLines = [
-  'You already clicked this once.',
-  'How much more unsure could you possibly be?',
-  'Please don’t make me explain the joke.',
-  'I suppose building an entire website while quietly hoping for one particular email is a fairly elaborate way of admitting that I care. There were probably simpler ways to say it, but none of them came with a custom domain.',
-  'This is starting to feel less like an easter egg and more like an interrogation.',
-  'Fine. If you’ve made it this far, click the link below ↓ and follow me. It might make me feel a little less unsure. Respect.'
+  ['You already clicked this once.'],
+  ['How much more unsure could you possibly be?'],
+  ['Please don’t make me explain the joke.'],
+  [
+    'I suppose building an entire website while quietly hoping for one particular email is a fairly elaborate way of admitting that I care.',
+    'There were probably simpler ways to say it, but none of them came with a custom domain.'
+  ],
+  ['This is starting to feel less like an easter egg and more like an interrogation.'],
+  [
+    'Fine.',
+    'If you’ve made it this far, click the link below ↓ and follow me.',
+    'It might make me feel a little less unsure.',
+    'Respect.'
+  ]
 ];
 var unsureIndex = 0;
 var unsureTrigger = document.getElementById('unsure-trigger');
@@ -81,10 +90,12 @@ var unsureLinesEl = document.getElementById('unsure-lines');
 
 function addUnsureLine() {
   if (!unsureTrigger || !unsureLinesEl || unsureIndex >= unsureLines.length) return;
-  var line = document.createElement('span');
-  line.textContent = unsureLines[unsureIndex];
-  unsureLinesEl.appendChild(line);
-  unsureLinesEl.appendChild(document.createElement('br'));
+  unsureLines[unsureIndex].forEach(function(text) {
+    var line = document.createElement('span');
+    line.className = 'unsure-thought';
+    line.textContent = text;
+    unsureLinesEl.appendChild(line);
+  });
   unsureIndex += 1;
   if (unsureIndex === unsureLines.length) {
     var plain = document.createTextNode('unsure');
