@@ -314,14 +314,15 @@
 <div id="creative" style="display:none">
 
 <div class="creative-nav">
-  <a href="#" onclick="filterCreative('all');return false;" aria-current="true">All</a>
+  <a href="#" onclick="filterCreative('selected');return false;" aria-current="true">Selected</a>
+  <a href="#" onclick="filterCreative('all');return false;" aria-current="false">All</a>
   <a href="#" onclick="filterCreative('campaigns');return false;">Campaigns</a>
   <a href="#" onclick="filterCreative('films');return false;">Films</a>
   <a href="#" onclick="filterCreative('music-videos');return false;">Music Videos</a>
 </div>
 
 <!-- клавакока -->
-<div class="writer-item" data-work-type="campaigns">
+<div class="writer-item" data-work-type="campaigns" data-selected="true">
   <iframe
     data-src="https://player.vimeo.com/video/1215406133?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -338,7 +339,7 @@
 </div>
 
 <!-- механик -->
-<div class="writer-item" data-work-type="campaigns">
+<div class="writer-item" data-work-type="campaigns" data-selected="true">
   <iframe
     data-src="https://player.vimeo.com/video/1215406102?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -355,7 +356,7 @@
 </div>
 
 <!-- пей друга -->
-<div class="writer-item" data-work-type="campaigns">
+<div class="writer-item" data-work-type="campaigns" data-selected="true">
   <iframe
     data-src="https://player.vimeo.com/video/1215406075?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -507,7 +508,7 @@
 </div>
 
 <!-- ган -->
-<div class="writer-item" data-work-type="music-videos">
+<div class="writer-item" data-work-type="music-videos" data-selected="true">
   <iframe
     data-src="https://player.vimeo.com/video/1182899100?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -524,7 +525,7 @@
 </div>
 
 <!-- веселыериффы -->
-<div class="writer-item" data-work-type="music-videos">
+<div class="writer-item" data-work-type="music-videos" data-selected="true">
   <iframe
     data-src="https://player.vimeo.com/video/1186844857?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -554,7 +555,7 @@
 </div>
 
 <!-- поптанцор -->
-<div class="writer-item" data-work-type="music-videos">
+<div class="writer-item" data-work-type="music-videos" data-selected="true">
   <iframe
     data-src="https://player.vimeo.com/video/1191491004?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -671,7 +672,7 @@
 </div>
 
 <!-- кпп -->
-<div class="writer-item" data-work-type="campaigns">
+<div class="writer-item" data-work-type="campaigns" data-selected="true">
   <iframe
     data-src="https://player.vimeo.com/video/1182972966?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -705,7 +706,7 @@
 </div>
 
 <!-- ну и год -->
-<div class="writer-item" data-work-type="campaigns">
+<div class="writer-item" data-work-type="campaigns" data-selected="true">
   <iframe
     data-src="https://player.vimeo.com/video/1182919184?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -722,7 +723,7 @@
 </div>
 
 <!-- помужски -->
-<div class="writer-item" data-work-type="films">
+<div class="writer-item" data-work-type="films" data-selected="true">
   <iframe
     data-src="https://player.vimeo.com/video/1184038571?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -756,7 +757,7 @@
 </div>
 
 <!-- мегафон -->
-<div class="writer-item" data-work-type="campaigns">
+<div class="writer-item" data-work-type="campaigns" data-selected="true">
   <iframe
     data-src="https://player.vimeo.com/video/984738673?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -773,7 +774,7 @@
 </div>
 
 <!-- казань экспрес -->
-<div class="writer-item" data-work-type="campaigns">
+<div class="writer-item" data-work-type="campaigns" data-selected="true">
   <iframe
     data-src="https://player.vimeo.com/video/1184038570?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -807,7 +808,7 @@
 </div>
 
 <!-- альфаголубь -->
-<div class="writer-item" data-work-type="campaigns">
+<div class="writer-item" data-work-type="campaigns" data-selected="true">
   <iframe
     data-src="https://player.vimeo.com/video/984739209?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -824,7 +825,7 @@
 </div>
 
 <!-- брусникашеринг -->
-<div class="writer-item" data-work-type="campaigns">
+<div class="writer-item" data-work-type="campaigns" data-selected="true">
   <iframe
     data-src="https://player.vimeo.com/video/984739599?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -858,7 +859,7 @@
 </div>
 
 <!-- видишь краба любишь краба -->
-<div class="writer-item" data-work-type="campaigns">
+<div class="writer-item" data-work-type="campaigns" data-selected="true">
   <iframe
     data-src="https://player.vimeo.com/video/1183989572?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -875,7 +876,7 @@
 </div>
 
 <!-- точка2020 -->
-<div class="writer-item" data-work-type="campaigns">
+<div class="writer-item" data-work-type="campaigns" data-selected="true">
   <iframe
     data-src="https://player.vimeo.com/video/984738909?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -943,7 +944,7 @@
 </div>
 
 <!-- форте фам -->
-<div class="writer-item" data-work-type="campaigns">
+<div class="writer-item" data-work-type="campaigns" data-selected="true">
   <iframe
     data-src="https://player.vimeo.com/video/984739361?title=1&byline=0&portrait=0&badge=0"
     width="500"
@@ -1255,13 +1256,15 @@ function show(id) {
     iframe.src = iframe.getAttribute('data-src');
     iframe.removeAttribute('data-src');
   });
-  if (id === 'creative') requestAnimationFrame(fitWriterDesc);
+  if (id === 'creative') filterCreative('selected');
 }
 
 function filterCreative(type) {
   document.querySelectorAll('#creative .writer-item').forEach(function(item) {
     var isHidden = item.getAttribute('data-hidden') === 'true';
-    item.style.display = !isHidden && (type === 'all' || item.getAttribute('data-work-type') === type) ? '' : 'none';
+    var isSelected = item.getAttribute('data-selected') === 'true';
+    var matchesType = type === 'all' || (type === 'selected' ? isSelected : item.getAttribute('data-work-type') === type);
+    item.style.display = !isHidden && matchesType ? '' : 'none';
   });
   document.querySelectorAll('#creative .creative-nav a').forEach(function(link) {
     link.setAttribute('aria-current', link.getAttribute('onclick').indexOf("'" + type + "'") !== -1 ? 'true' : 'false');
