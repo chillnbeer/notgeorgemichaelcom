@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://notgeorgemichael.com/photos/</loc>
+    <image:image>
+      <image:loc>https://notgeorgemichael.com/images/george-kornilov-buzhba-portrait.jpg</image:loc>
+      <image:title>George Kornilov (Жорж Корнилов), also known as Buzhba</image:title>
+      <image:caption>Portrait of George Kornilov, creative, composer and Buzhba.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://notgeorgemichael.com/images/george-kornilov-business-card.jpg</image:loc>
+      <image:title>George Kornilov business card</image:title>
+      <image:caption>Business card for George Kornilov with @buzhba100.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://notgeorgemichael.com/images/george-kornilov-forehead-print.jpg</image:loc>
+      <image:title>George Kornilov forehead print</image:title>
+      <image:caption>Forehead print reading G. Kornilov.</image:caption>
+    </image:image>
+  </url>
+</urlset>

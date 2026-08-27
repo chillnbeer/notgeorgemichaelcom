@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://notgeorgemichael.com/sitemap.xml
+Sitemap: https://notgeorgemichael.com/image-sitemap.xml
