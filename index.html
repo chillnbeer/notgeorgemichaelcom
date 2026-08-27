@@ -80,6 +80,7 @@
   td img { width: 281px; height: 281px; }
   .writer-item { display: flex; gap: 32px; align-items: flex-start; margin-bottom: 40px; max-width: 1200px; }
   .writer-item iframe { flex: 0 0 auto; }
+  .writer-media { display: flex; flex-direction: column; gap: 16px; flex: 0 0 auto; }
   .writer-desc { flex: 1 1 0; min-width: 0; line-height: 1.45; font-size: 15px; }
   .writer-desc p { margin: 0 0 12px; }
   .writer-desc p:last-child { margin-bottom: 0; }
@@ -91,6 +92,7 @@
   .site-date { position: fixed; right: 16px; bottom: 12px; line-height: 1.6; max-width: 500px; }
   @media (max-width: 760px) {
     .writer-item { flex-direction: column; align-items: stretch; gap: 16px; max-width: 500px; }
+    .writer-media { width: 100%; max-width: 500px; }
     .writer-desc { width: 100%; max-width: 500px; }
     .writer-desc-toggle { width: 100%; max-width: 500px; line-height: 1.45; font-size: 15px; }
     .writer-desc-toggle summary { cursor: pointer; }
@@ -401,34 +403,31 @@
     <p>Idea<br />Some words already contain an idea. Patio was one of them. One letter away from party, it became the perfect place for neighbours to meet long before they knew each other's names.</p>
   </div>
 </div>
-<!-- заживем брусника -->
+<!-- заживем брусника / потому что брусника рядом -->
 <div class="writer-item" data-selected="true" data-work-type="campaigns">
-  <iframe
-    data-src="https://player.vimeo.com/video/1182898177?title=1&byline=0&portrait=0&badge=0"
-    width="500"
-    height="281"
-    frameborder="0"
-    allow="autoplay; fullscreen; picture-in-picture"
-    allowfullscreen>
-  </iframe>
+  <div class="writer-media">
+    <iframe
+      data-src="https://player.vimeo.com/video/1182898177?title=1&byline=0&portrait=0&badge=0"
+      width="500"
+      height="281"
+      frameborder="0"
+      allow="autoplay; fullscreen; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+    <iframe
+      data-src="https://player.vimeo.com/video/1182968069?title=1&byline=0&portrait=0&badge=0"
+      width="500"
+      height="281"
+      frameborder="0"
+      allow="autoplay; fullscreen; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
   <div class="writer-desc">
     <p>Client<br />Brusnika</p>
     <p>Challenge<br />Show that a new development can improve not only the place where it's built, but the entire neighbourhood.</p>
     <p>Idea<br />Construction sites usually make people expect noise and inconvenience. We turned that expectation upside down. Wherever Brusnika appears, cafés, schools, parks and everyday life begin to flourish around it. A new building becomes the beginning of a better neighbourhood, not just another address.</p>
-  </div>
-</div>
-<!-- потому что брусника рядом -->
-<div class="writer-item" data-selected="true" data-work-type="campaigns">
-  <iframe
-    data-src="https://player.vimeo.com/video/1182968069?title=1&byline=0&portrait=0&badge=0"
-    width="500"
-    height="281"
-    frameborder="0"
-    allow="autoplay; fullscreen; picture-in-picture"
-    allowfullscreen>
-  </iframe>
-  <div class="writer-desc">
-    <p>Case Study</p>
+    <p>Case Study<br />Because We're Neighbors.</p>
   </div>
 </div>
 <!-- ну и год -->
@@ -1237,7 +1236,7 @@ function filterCreative(type) {
 function fitWriterDesc() {
   if (window.matchMedia('(max-width: 760px)').matches) return;
   document.querySelectorAll('#creative .writer-item').forEach(function(item) {
-    var media = item.querySelector('iframe') || item.querySelector('.video-wrap');
+    var media = item.querySelector('.writer-media') || item.querySelector('iframe') || item.querySelector('.video-wrap');
     var desc = item.querySelector('.writer-desc');
     if (!media || !desc) return;
     var target = media.offsetHeight;
