@@ -26,10 +26,14 @@
   .quiet-button:hover, .quiet-button:focus-visible { opacity: 0.72; }
   .link-button { color: LinkText; text-decoration: underline; }
   .unsure-thought { display: block; margin: 0 0 12px; }
+  .unsure-images { line-height: 1.6; max-width: 640px; margin: 32px 0 24px; }
+  .unsure-images img { display: block; width: 100%; max-width: 640px; height: auto; margin: 0 0 16px; }
   .site-date { position: fixed; right: 16px; bottom: 12px; line-height: 1.6; max-width: 500px; }
   .wide-text div[style*="max-width:500px"] { max-width: min(50vw, 900px) !important; }
   @media (max-width: 760px) {
     .wide-text div[style*="max-width:500px"] { max-width: 100% !important; }
+    .unsure-images { max-width: 100%; }
+    .unsure-images img { max-width: 100%; }
   }
 </style>
 </head>
@@ -61,6 +65,11 @@
 
 <div style="line-height:1.6; max-width:500px; margin-bottom:24px;">
   Still the other George.
+</div>
+
+<div class="unsure-images">
+  <img src="/images/unsure-business-card.jpg" alt="George Kornilov's business card clipped to a dartboard" />
+  <img src="/images/forehead-print.jpg" alt="A forehead print reading G. Kornilov" />
 </div>
 
 <div class="site-date">Update 4 aug 2026.</div>
